@@ -3,11 +3,12 @@
 import sys
 import email
 import subprocess
+import urllib.parse
 
 message_bytes = sys.stdin.buffer.read()
 message = email.message_from_bytes(message_bytes)
 
-message_id = message['message-id'][1:-1]
+message_id = urllib.parse.quote(message['message-id'][1:-1])
 subject = message['subject']
 
 subprocess.Popen([
