@@ -12,5 +12,5 @@ subject = message['subject']
 
 subprocess.Popen([
     'emacsclient',
-    f'org-protocol://store-link?url=mutt:{message_id}&title={subject}'
+    f'org-protocol://store-link?url=message://{message_id}&title={subject}'
 ])

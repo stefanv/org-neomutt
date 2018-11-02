@@ -9,9 +9,9 @@
 
 (defun stefanv/mutt-open-message (message-id)
   "In neomutt, open the email with the the given Message-ID"
-  (interactive)
   (let*
-      ((mail-file
+      ((message-id (replace-regexp-in-string "^/*" "" message-id))
+       (mail-file
         (replace-regexp-in-string
          "\n$" "" (shell-command-to-string
                    (format "notmuch search --output=files id:%s" message-id))))
@@ -31,4 +31,4 @@
                    "-e" (format "push '%s'" mutt-keystrokes))))
 
 ;; Hook up `mutt:...` style URLs
-(org-add-link-type "mutt" 'stefanv/mutt-open-message)
+(org-add-link-type "message" 'stefanv/mutt-open-message)
