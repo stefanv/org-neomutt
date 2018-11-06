@@ -1,2 +1,2 @@
 # Bind to Alt-L (ESC-L)
-macro index,pager \el "|~/scripts/mutt-save-org-link.py\n"
+macro index,pager \el "<pipe-message>~/scripts/mutt-save-org-link.py\n"
