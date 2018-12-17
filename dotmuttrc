@@ -1,2 +1,5 @@
 # Bind to Alt-L (ESC-L)
 macro index,pager \el "<pipe-message>~/scripts/mutt-save-org-link.py\n"
+
+# Bind to Alt-t (ESC-t)
+macro index,pager \et "<pipe-message>~/scripts/mutt-org-save-task.py\n"
