@@ -17,7 +17,6 @@
                    (format "notmuch search --output=files id:%s" message-id))))
        (mail-dir (replace-regexp-in-string "/\\(cur\\|new\\|tmp\\)/$" ""
                                            (file-name-directory mail-file)))
-       (process-id (concat "neomutt-" message-id))
        (message-id-escaped (regexp-quote message-id))
        (mutt-keystrokes
         (format "l~i %s\n\n" (shell-quote-argument message-id-escaped)))
