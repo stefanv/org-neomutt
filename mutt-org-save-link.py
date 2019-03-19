@@ -10,7 +10,7 @@ message_bytes = sys.stdin.buffer.read()
 message = email.message_from_bytes(message_bytes)
 
 # Grab the relevant message headers
-message_id = urllib.parse.quote(message['message-id'][1:-1])
+message_id = urllib.parse.quote(message['message-id'].strip()[1:-1])
 subject = message['subject'].replace('[', '{').replace(']', '}')
 
 # Ask emacsclient to save a link to the message
