@@ -24,7 +24,7 @@
                            "-e" (format "push '%s'" mutt-keystrokes))))
 
     (message "Launching neomutt for message %s" message-id)
-    (call-process "setsid" nil nil
+    (call-process "setsid" nil nil nil
                    "-f" "gnome-terminal" "--window" "--"
                    "neomutt" "-R" "-f" mail-dir
                    "-e" (format "push '%s'" mutt-keystrokes))))
